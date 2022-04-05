@@ -5,6 +5,12 @@
 import argparse
 import sys
 
+# TODO
+# Allow strings of words as input
+# Read from file
+# Output to file
+# Read from STDIN
+
 ap = argparse.ArgumentParser()
 mode_arg = ap.add_mutually_exclusive_group()
 mode_arg.add_argument("-e","--encode", default=True, action="store_true", required=False, help="Output Morse code for input string. This is the default.")
@@ -23,6 +29,14 @@ if (args["decode"] == True):
 
 #print(mode)
 
+# From Wikipedia:
+# https://en.wikipedia.org/wiki/Morse_code
+# The length of a dot is one unit
+# Dash is three units
+# Space between parts of same letter is one unit
+# Space between letters is three units
+# Space between words is seven units
+# See also https://en.wikipedia.org/wiki/Prosigns_for_Morse_code for punctuation etc
 morse_dict = {
     "A": ".-",
     "B": "-...",
@@ -50,7 +64,17 @@ morse_dict = {
     "X": "-..-",
     "Y": "-.--",
     "Z": "--..",
-    " ": "   "
+    " ": "   ",
+    "1": ".----",
+    "2": "..---",
+    "3": "...--",
+    "4": "....-",
+    "5": ".....",
+    "6": "-....",
+    "7": "--...",
+    "8": "---..",
+    "9": "----.",
+    "0": "-----",
 }
 
 # reverse keys and values, easier than looking through each time
