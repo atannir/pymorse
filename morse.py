@@ -123,9 +123,11 @@ if(mode == 'decode'):
         input_string = args["cmdargs"] # now an array
     else:
         input_string = test_morse
+        # As an array, this comes out to EEEE E ETEE ETEE TTT     ETT TTT ETE ETEE TEE
+        # which is not exactly what we were going for
     #for m in input_string.split(" "):
     for m in input_string:
-        #print(decode_morse(c), end="") # space between words gets consumed
+        #print(decode_morse(c), end="") # space between words gets consumed, unfortunately
         output_string += (decode_morse(m))
     print(output_string)
     sys.exit()
