@@ -95,10 +95,12 @@ if(mode == 'encode'):
 
 if(mode == 'decode'):
     if(args["cmdargs"]):
-        input_string = args["cmdargs"][0] # will only decode one character
+        #input_string = args["cmdargs"][0] # will only decode one character
+        input_string = args["cmdargs"] # now an array
     else:
         input_string = test_morse
-    for m in input_string.split(" "):
+    #for m in input_string.split(" "):
+    for m in input_string:
         #print(decode_morse(c), end="") # space between words gets consumed
         output_string += (decode_morse(m))
     print(output_string)
